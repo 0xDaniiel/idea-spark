@@ -19,8 +19,9 @@ const useWakeBackend = () => {
   }, []);
 };
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
+const App = () => {
+  useWakeBackend();
+  return (
     <AuthProvider>
       <TooltipProvider>
         <Toaster />
